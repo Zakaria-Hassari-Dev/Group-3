@@ -1,5 +1,0 @@
-# FileManagerApp
-
-## Installation
-
-
