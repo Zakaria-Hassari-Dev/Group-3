@@ -1,0 +1,16 @@
+INFO: La session de l'utilisateur a été enregistrée avec succès.
+DEBUG: Chargement des données utilisateur à partir de la base de données.
+ERROR: La connexion à la base de données a échoué.
+INFO: Les notifications ont été envoyées à tous les utilisateurs.
+WARNING: Le quota de stockage est presque atteint.
+INFO: La fonctionnalité de sauvegarde automatique a été activée.
+DEBUG: L'utilisateur a ouvert le fichier de paramètres.
+INFO: Un nouveau ticket a été créé pour le support.
+ERROR: L'impression du document a échoué.
+INFO: Les données de l'utilisateur ont été synchronisées.
+DEBUG: L'utilisateur a changé son adresse e-mail.
+WARNING: Le système a rencontré un temps de réponse lent.
+INFO: La version bêta de l'application a été lancée avec succès.
+ERROR: Une tentative de connexion non autorisée a été détectée.
+INFO: Les journaux de l'application ont été sauvegardés.
+DEBUG: Vérification des mises à jour disponibles pour l'application.

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Logs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Gestionnaire de Logs</h1>
+        <div class="results">
+            <h2>Contenu du fichier log.txt :</h2>
+            <pre>{{ logs | join('\n') }}</pre>
+        </div>
+        
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="new_entry">Ajouter une nouvelle entrée :</label>
+                <input type="text" class="form-control" id="new_entry" name="new_entry" placeholder="Entrez votre log ici">
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+
+        <hr>
+
+        <h2>Recherche par mot-clé :</h2>
+        <form method="POST" action="/search">
+            <div class="form-group">
+                <label for="keyword">Mot-clé :</label>
+                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Ex: ERROR, INFO">
+            </div>
+            <button type="submit" class="btn btn-success">Rechercher</button>
+        </form>
+
+        <div class="results mt-4">
+            <h3>Résultats de la recherche :</h3>
+            <pre>{{ search_results | join('\n') }}</pre>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
