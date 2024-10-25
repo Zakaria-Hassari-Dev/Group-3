@@ -1,5 +1,5 @@
 # Projet by : 
- # Zakaria Hassari / Soufian.elmezouari / hamza Senhadji / Celina Chouali / Ahcen dehimi 
+ # Zakaria Hassari / Soufian.elmezouari / Celina Chouali / Ahcen dehimi 
 # Gestionnaire de Logs
 
 Ce projet est une application web simple en Python et Flask, permettant la gestion d'un fichier de logs. L'application lit, affiche et ajoute des entrées de logs dans un fichier texte. Elle permet également de rechercher des mots-clés spécifiques dans le fichier et de supprimer des entrées de logs par mot-clé.
