@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Logs</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        /* Styles généraux */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        h1, h2 {
+            color: #343a40;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .btn-custom {
+            margin-top: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .results, .results-footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .results pre, .results-footer {
+            font-size: 14px;
+            color: #495057;
+        }
+
+        .results h3 {
+            font-size: 18px;
+            color: #495057;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Gestionnaire de Logs</h1>
+
+        <!-- Affichage du contenu du fichier -->
+        <div class="results">
+            <h2>Contenu du fichier log.txt :</h2>
+            <pre>{{ logs | join('\n') }}</pre>
+        </div>
+
+        <!-- Formulaire d'ajout de nouvelle entrée -->
+        <form method="POST" action="/" class="my-4">
+            <div class="form-group">
+                <label for="new_entry">Ajouter une nouvelle entrée :</label>
+                <input type="text" class="form-control" id="new_entry" name="new_entry" placeholder="Entrez votre log ici">
+            </div>
+            <button type="submit" class="btn btn-primary btn-custom">Ajouter</button>
+        </form>
+
+        <!-- Recherche par mot-clé -->
+        <h2>Recherche par mot-clé :</h2>
+        <form method="POST" action="/search" class="my-4">
+            <div class="form-group">
+                <label for="keyword">Mot-clé :</label>
+                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Ex: ERROR, INFO">
+            </div>
+            <button type="submit" class="btn btn-success btn-custom">Rechercher</button>
+        </form>
+
+        <!-- Suppression par mot-clé -->
+        <h2>Supprimer par mot-clé :</h2>
+        <form method="POST" action="/delete" class="my-4">
+            <div class="form-group">
+                <label for="delete_keyword">Mot-clé à supprimer :</label>
+                <input type="text" class="form-control" id="delete_keyword" name="delete_keyword" placeholder="Ex: ERROR, INFO">
+            </div>
+            <button type="submit" class="btn btn-danger btn-custom">Supprimer</button>
+        </form>
+
+        <!-- Résultats de recherche -->
+        <div class="results">
+            <h3>Résultats de la recherche :</h3>
+            <pre>{{ search_results | join('\n') }}</pre>
+        </div>
+
+        <!-- Footer -->
+        <div class="results-footer text-center">
+            &copy; 2024 Gestionnaire de Logs - Tous droits réservés
+        </div>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
